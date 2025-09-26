@@ -93,7 +93,7 @@
                                                     <input type="number" name="jumlah[]" class="form-control jumlah" required>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="harga_satuan[]" class="form-control harga" min="0" required>
+                                                    <input type="number" name="harga_satuan[]" step="0.01" lang="id" class="form-control harga" required>
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control subtotal" readonly>

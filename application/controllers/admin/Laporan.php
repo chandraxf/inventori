@@ -22,10 +22,9 @@ class Laporan extends CI_Controller {
         $data['periode'] = $periode;
         $data['laporan_stok'] = $this->M_laporan->get_laporan_stok($periode);
         
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('dist/_partials/header', $data);
         $this->load->view('admin/laporan/stok', $data);
-        $this->load->view('admin/template/footer');
+        $this->load->view('dist/_partials/footer');
     }
     
     public function kartu_stok() {
@@ -45,10 +44,9 @@ class Laporan extends CI_Controller {
             $data['selected_barang'] = $this->M_barang->get_by_id($barang_id);
         }
         
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('dist/_partials/header', $data);
         $this->load->view('admin/laporan/kartu_stok', $data);
-        $this->load->view('admin/template/footer');
+        $this->load->view('dist/_partials/footer');
     }
     
     public function barang_masuk() {
@@ -61,10 +59,9 @@ class Laporan extends CI_Controller {
         $data['end_date'] = $end_date;
         $data['barang_masuk'] = $this->M_barang_masuk->get_by_periode($start_date, $end_date);
         
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('dist/_partials/header', $data);
         $this->load->view('admin/laporan/barang_masuk', $data);
-        $this->load->view('admin/template/footer');
+        $this->load->view('dist/_partials/footer');
     }
     
     public function barang_keluar() {
@@ -77,10 +74,9 @@ class Laporan extends CI_Controller {
         $data['end_date'] = $end_date;
         $data['barang_keluar'] = $this->M_barang_keluar->get_by_periode($start_date, $end_date);
         
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/sidebar', $data);
+        $this->load->view('dist/_partials/header', $data);
         $this->load->view('admin/laporan/barang_keluar', $data);
-        $this->load->view('admin/template/footer');
+        $this->load->view('dist/_partials/footer');
     }
     
     public function stok_excel() {

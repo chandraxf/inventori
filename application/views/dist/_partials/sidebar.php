@@ -44,7 +44,41 @@
                         <i class="fas fa-clipboard-check"></i> <span>Stok Opname</span>
                     </a>
                 </li>
-
+                <li class="menu-header">Permintaan</li>
+                <li class="dropdown <?= $this->uri->segment(2) == 'permintaan' ? 'active' : '' ?>">
+                    <a href="#" class="nav-link has-dropdown">
+                        <i class="fas fa-clipboard-list"></i> <span>Permintaan Barang</span>
+                        <!-- <?php
+                        $pending_count = $this->db->where('status', 'pending')
+                            ->count_all_results('permintaan_barang');
+                        if ($pending_count > 0) :
+                            ?>
+                            <span class="badge badge-warning"><?= $pending_count ?></span>
+                        <?php endif; ?> -->
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="<?= $this->uri->segment(3) == '' ? 'active' : '' ?>">
+                            <a class="nav-link" href="<?= base_url('admin/permintaan') ?>">
+                                Semua Permintaan
+                            </a>
+                        </li>
+                        <li class="<?= $this->uri->segment(3) == 'pending' ? 'active' : '' ?>">
+                            <a class="nav-link" href="<?= base_url('admin/permintaan?status=pending') ?>">
+                                    Menunggu Persetujuan
+                            </a>
+                        </li>
+                        <li class="<?= $this->uri->segment(3) == 'approved' ? 'active' : '' ?>">
+                            <a class="nav-link" href="<?= base_url('admin/permintaan?status=approved') ?>">
+                                Disetujui
+                            </a>
+                        </li>
+                        <li class="<?= $this->uri->segment(3) == 'rejected' ? 'active' : '' ?>">
+                            <a class="nav-link" href="<?= base_url('admin/permintaan?status=rejected') ?>">
+                                Ditolak
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="menu-header">Laporan</li>
                 <li class="dropdown <?= $this->uri->segment(2) == 'laporan' ? 'active' : '' ?>">
                     <a href="#" class="nav-link has-dropdown">
@@ -61,6 +95,11 @@
                 <li class="<?= $this->uri->segment(2) == 'referensi' ? 'active' : '' ?>">
                     <a class="nav-link" href="<?= base_url('admin/referensi') ?>">
                         <i class="fas fa-cog"></i> <span>Referensi</span>
+                    </a>
+                </li>
+                <li class="<?= $this->uri->segment(2) == 'user-management' ? 'active' : '' ?>">
+                    <a class="nav-link" href="<?= base_url('admin/user_management') ?>">
+                        <i class="fas fa-cog"></i> <span>User Management</span>
                     </a>
                 </li>
             </ul>

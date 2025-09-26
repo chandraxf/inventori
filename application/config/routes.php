@@ -78,17 +78,37 @@ $route['admin/barang-keluar/posting/(:num)'] = 'admin/barang_keluar/posting/$1';
 
 
 $route['admin/stok-opname'] = 'admin/stok_opname';
+$route['admin/stok-opname/simpan'] = 'admin/stok_opname/simpan';
+$route['admin/stok-opname/posting/(:num)'] = 'admin/stok_opname/posting/$1';
+$route['admin/stok-opname/hapus/(:num)'] = 'admin/stok_opname/hapus/$1';
 $route['admin/stok-opname/tambah'] = 'admin/stok_opname/tambah';
 $route['admin/laporan'] = 'admin/laporan';
+
+$route['admin/permintaan'] = 'admin/permintaan';
+$route['admin/permintaan/detail/(:num)'] = 'admin/permintaan/detail/$1';
+$route['admin/permintaan/approve/(:num)'] = 'admin/permintaan/approve/$1';
+$route['admin/permintaan/process_approve'] = 'admin/permintaan/process_approve';
+
+
+$route['admin/user-management'] = 'admin/user_management';
+$route['admin/user-management/tambah'] = 'admin/user_management/tambah';
+$route['admin/user-management/edit/(:num)'] = 'admin/user_management/edit/$1';
+$route['admin/user-management/hapus/(:num)'] = 'admin/user_management/hapus/$1';
+
+$route['admin/laporan/kartu-stok'] = 'admin/laporan/kartu_stok';
+$route['admin/laporan/barang-masuk'] = 'admin/laporan/barang_masuk';
+$route['admin/laporan/barang-keluar'] = 'admin/laporan/barang_keluar';
 
 // User routes
 $route['user'] = 'user/dashboard';
 $route['user/katalog-barang'] = 'user/katalog_barang';
 $route['user/permintaan-barang'] = 'user/permintaan_barang';
 $route['user/permintaan-barang/buat'] = 'user/permintaan_barang/buat';
+$route['user/permintaan-barang/detail/(:num)'] = 'user/permintaan_barang/detail/$1';
 $route['user/permintaan-barang/submit'] = 'user/permintaan_barang/submit';
 
 
 $route['user/katalog-barang/index'] = 'user/katalog_barang/index';
 $route['user/katalog-barang/index/(:num)'] = 'user/katalog_barang/index/$1';
 $route['user/katalog-barang/add_to_cart'] = 'user/katalog_barang/add_to_cart';
+

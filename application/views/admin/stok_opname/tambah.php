@@ -12,7 +12,8 @@
         <div class="section-body">
             <div class="row">
                 <div class="col-12">
-                    <form action="<?= base_url('admin/stok-opname/simpan') ?>" method="POST">
+                    <form action="<?= base_url('admin/stok-opname/simpan') ?>" method="POST" enctype="multipart/form-data">
+                        <?= csrf_field() ?>
                         <div class="card">
                             <div class="card-header">
                                 <h4>Form Stok Opname</h4>
@@ -69,6 +70,7 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">#</th>
+                                                <th width="5%">ID Barang</th>
                                                 <th width="15%">Kode</th>
                                                 <th width="30%">Nama Barang</th>
                                                 <th width="10%">Satuan</th>
@@ -82,6 +84,7 @@
                                             <?php $no = 1; foreach($barang_with_stok as $b): ?>
                                             <tr>
                                                 <td><?= $no++ ?></td>
+                                                <td><?= $b->id ?></td>
                                                 <td><?= $b->kode_nusp ?></td>
                                                 <td><?= $b->nama_nusp ?></td>
                                                 <td><?= $b->satuan ?></td>
@@ -94,10 +97,10 @@
                                                 </td>
                                                 <td>
                                                     <input type="number" name="stok_fisik[]" class="form-control stok-fisik" 
-                                                           value="<?= $b->stok_saat_ini ?>" min="0" required>
+                                                           value="<?= $b->stok_saat_ini ?>" required>
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="selisih[]" class="form-control selisih" readonly>
+                                                    <input type="number" class="form-control selisih" readonly>
                                                     <small class="selisih-text"></small>
                                                 </td>
                                                 <td>

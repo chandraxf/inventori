@@ -90,7 +90,8 @@
                                             <th style="width:200px">Nama Gudang</th>
                                             <th style="width:80px">Satuan</th>
                                             <th style="width:80px">Stok</th>
-                                            <th style="width:80px">Stok Min</th>
+                                            <th style="width:80px">Gambar</th>
+                                            <!-- <th style="width:80px">Stok Min</th> -->
                                             <th style="width:120px">Harga</th>
                                             <th style="width:100px">Status</th>
                                             <th style="width:20%">Aksi</th>
@@ -115,7 +116,14 @@
                                                         <span class="badge badge-success"><?= $row->stok_saat_ini ?></span>
                                                     <?php endif; ?>
                                                 </td>
-                                                <td><?= $row->stok_minimum ?></td>
+                                                <td>
+                                                    <?php if ($row->gambar) : ?>
+                                                        <img src="<?= base_url('uploads/barang/' . $row->gambar) ?>" alt="Gambar Barang" class="img-fluid" style="max-height: 50px;">
+                                                    <?php else : ?>
+                                                        <span class="badge badge-danger">Tidak ada gambar!</span>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <!-- <th style="width:80px">Stok Min</th> -->
                                                 <td>Rp <?= number_format($row->harga_terakhir, 0, ',', '.') ?></td>
                                                 <td>
                                                     <?php if ($row->status == 'aktif') : ?>

@@ -88,8 +88,8 @@
                                 </div>
                                 <div class="article-details">
                                     <div class="article-title">
-                                        <h6 title="<?= $item->nama_nusp ?>">
-                                            <?= character_limiter($item->nama_nusp, 40) ?>
+                                        <h6 title="<?= $item->nama_gudang ?>">
+                                            <?= character_limiter($item->nama_gudang, 40) ?>
                                         </h6>
                                     </div>
                                     <p class="text-muted small mb-2">

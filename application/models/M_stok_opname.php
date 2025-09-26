@@ -20,7 +20,7 @@ class M_stok_opname extends CI_Model
         $this->db->from('master_barang mb');
         $this->db->join('stok_barang sb', 'mb.id = sb.barang_id AND sb.periode = "' . $periode . '"', 'left');
         $this->db->where('mb.status', 'aktif');
-        $this->db->order_by('mb.kode_nusp', 'ASC');
+        $this->db->order_by('mb.id', 'ASC');
 
         return $this->db->get()->result();
     }
@@ -35,5 +35,12 @@ class M_stok_opname extends CI_Model
         } catch (Exception $e) {
             return ['status' => false, 'message' => 'Gagal posting: ' . $e->getMessage()];
         }
+    }
+    
+    public function hapus($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('stok_opname');
+        return ['status' => $this->db->affected_rows() > 0, 'message' => 'Stok opname berhasil dihapus'];
     }
 }
